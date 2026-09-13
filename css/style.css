@@ -797,6 +797,13 @@ p#credits {
     font-style: italic;
     font-size: 0.5px;
 }
+/* The spiral's labels are sized in its own drawing units, so on a phone they
+   shrink to about 5px. Set them larger there. The launch note stays a
+   touch smaller than the years so its two close-set lines don't collide. */
+@media(max-width: 535px) {
+    .year-marks text { font-size: 0.85px; }
+    .spiral-mark text { font-size: 0.7px; }
+}
 .years-toggle {
     position: absolute;
     top: 8%;
@@ -937,7 +944,7 @@ p#credits {
         margin: 0;
     }
     .grow-date {
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 
