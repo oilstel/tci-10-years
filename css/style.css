@@ -464,8 +464,13 @@ p#credits {
     ul.names {
         columns: 1;
     }
+    /* tablets and small laptops: scale with the screen so the 10 stays
+       bigger than the words above it */
+    #masthead h1 {
+        font-size: min(82px, 11vw);
+    }
     #masthead .ten {
-        font-size: 60px;
+        font-size: min(150px, 22vw);
     }
 }
 
@@ -476,12 +481,13 @@ p#credits {
     article {
         margin-top: 50px;
     }
+    /* phones: "TCI Turns" nearly fills the width, the 10 set large below */
     #masthead h1 {
-    margin-top: 0;
-        font-size: 20px;
+        margin-top: 0;
+        font-size: 15vw;
     }
     #masthead .ten {
-        font-size: 48px;
+        font-size: 36vw;
     }
     .entry .body {
         padding-left: 0;
@@ -662,7 +668,10 @@ p#credits {
 }
 .spiral-mark path {
     stroke: #fff;
-    stroke-width: 0.07;
+    /* same fixed hairline as the year marks, for the same Safari reason */
+    stroke-width: 1.2px;
+    vector-effect: non-scaling-stroke;
+    shape-rendering: geometricPrecision;
 }
 .spiral-mark text {
     fill: #fff;
@@ -775,7 +784,12 @@ p#credits {
 }
 .year-marks line {
     stroke: #fff;
-    stroke-width: 0.05;
+    /* A fixed hairline, not a fraction of a spiral cell: scaled that thin,
+       iPhone Safari (with the spiral's crisp edges) drew diagonal marks as
+       fat blobs. */
+    stroke-width: 1.2px;
+    vector-effect: non-scaling-stroke;
+    shape-rendering: geometricPrecision;
 }
 .year-marks text {
     fill: #fff;
@@ -1451,8 +1465,24 @@ details[open] > .stat-row .label {
 }
 
 
-@media(max-width: 820px) {
-    .wordbox-quotes { columns: 2; }
+/* Phones fit one column. A two-wide image would conjure a second column
+   past the screen's edge, so here everything runs a single column wide. */
+@media(max-width: 620px) {
+    .wordbox-quotes {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 6px 16px 10px 16px;
+    }
+    .wordbox-quotes .pulled-photo.wide {
+        grid-column: auto;
+    }
+    .wordbox-quotes > * {
+        min-width: 0;
+    }
+    /* a long unbroken run, like a web address, wraps instead of pushing out */
+    .wordbox-quotes .quote-card p,
+    .wordbox-quotes .attrib {
+        overflow-wrap: anywhere;
+    }
 }
 .wordbox-none {
     font-family: Courier, "Courier New", monospace;
@@ -1481,7 +1511,6 @@ details[open] > .stat-row .label {
     .wordbox-nav { width: 36px; height: 36px; }
     .wordbox-nav > svg { height: 17px; }
     .wordbox-more img { width: 18px; }
-    .wordbox-quotes { columns: 1; }
 }
 
 /* Every piece the word appears in, as a wrapping run of squares */
