@@ -1629,11 +1629,21 @@ details[open] > .stat-row .label {
     opacity: 0.12;
 }
 
+/* scoped with .scatter so these outrank the desktop sizes above — without it
+   they silently lost and phones got the full-size images */
 @media(max-width: 900px) {
-    .im-fossil-b, .im-sand-b { display: none; }
-    .im-fossil-a { width: 130px; right: 0; }
-    .im-sand-a { width: 190px; left: -30px; }
-    .im-beach { width: 130px; right: -18px; }
+    .scatter .im-fossil-b, .scatter .im-sand-b { display: none; }
+    .scatter .im-fossil-a { width: 130px; right: 0; }
+    .scatter .im-header-c { width: 170px; }
+    .scatter .im-sand-a { width: 190px; left: -30px; }
+    .scatter .im-beach { width: 130px; right: -18px; }
+}
+/* phones: a little smaller again */
+@media(max-width: 535px) {
+    .scatter .im-fossil-a { width: 100px; }
+    .scatter .im-header-c { width: 125px; }
+    .scatter .im-sand-a { width: 140px; left: -24px; }
+    .scatter .im-beach { width: 100px; right: -14px; }
 }
 
 /* Images in the word section run gray and a little lighter, so the only
@@ -1719,13 +1729,9 @@ nav#jump a {
     -webkit-box-decoration-break: clone;
 }
 
+/* phones skip the jump links; the page is a single scroll there */
 @media(max-width: 640px) {
     nav#jump {
-        position: static;
-        flex-flow: row wrap;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 4px 16px;
-        margin-top: 28px;
+        display: none;
     }
 }
