@@ -1,0 +1,812 @@
+[
+ {
+  "q": "It took a while to get there, which is fine. Sometimes it takes a long time to get where you're going.",
+  "slug": "alison-goldfrapp-on-paying-attention-to-detail",
+  "who": "Alison Goldfrapp",
+  "date": "2017-01-23",
+  "bg": "#F6FC90",
+  "fg": "#071BC9",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/alison.jpg"
+ },
+ {
+  "q": "The faces and names don't matter because no one is going to know them anymore when we're all dead.",
+  "slug": "daniel-arnold-on-the-ethics-of-street-photography",
+  "who": "Daniel Arnold",
+  "date": "2017-02-13",
+  "bg": "#548AEA",
+  "fg": "#F2F0EA",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/danielPASSPORT.jpg"
+ },
+ {
+  "q": "You only have this one lifetime—only a certain number of human years—to make things. You have to decide, Which of these ideas am I going to allow myself to focus on?",
+  "slug": "michael-stipe-on-having-multiple-creative-lives",
+  "who": "Michael Stipe",
+  "date": "2017-03-23",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/Stipe_passport.jpg"
+ },
+ {
+  "q": "With finite resources, how do we create infinite visions?",
+  "slug": "emel-mathlouthi-and-victoria-ruiz-on-using-music-to-protest",
+  "who": "Emel Mathlouthi and Victoria Ruiz",
+  "date": "2017-07-20",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/group_passport.jpg"
+ },
+ {
+  "q": "If you're drained of drive and ideas, it’s time to take a break, live life, and through that, find reinvigoration.",
+  "slug": "chelsea-wolfe-on-not-being-afraid-to-take-risks",
+  "who": "Chelsea Wolfe",
+  "date": "2017-10-09",
+  "bg": "#EDDA46",
+  "fg": "#000000",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/Chelsea_Wolfe_PASSPORT.jpg"
+ },
+ {
+  "q": "After having had a lot of bad collaborations, you pick the right ones. It becomes another skill that you hone over time.",
+  "slug": "isaac-mizrahi-on-unapologetically-pursuing-your-interests",
+  "who": "Isaac Mizrahi",
+  "date": "2018-02-08",
+  "bg": "#0F2BD4",
+  "fg": "#FBDBEB",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/IsaacM-passport-crop.jpg"
+ },
+ {
+  "q": "What stays here—in web pages, caches, and hard drives—might be the things that people retain of you in the future ahead.",
+  "slug": "laturbo-avedon-on-identity-and-immateriality",
+  "who": "LaTurbo Avedon",
+  "date": "2018-02-23",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/LaTurbo-PASSPORT.jpg"
+ },
+ {
+  "q": "I figure I can transition into a more solitary kind of art making when the time is right, when I’m at the right place in my life.",
+  "slug": "lizzi-bougatsos-on-what-it-means-to-identify-as-an-artist",
+  "who": "Lizzi Bougatsos",
+  "date": "2018-07-02",
+  "bg": "#B5D536",
+  "fg": "#315A45",
+  "img": "https://tci-assets.s3.amazonaws.com/uploads/Lizzi_Bougatsos_Passport-crop.jpg"
+ },
+ {
+  "q": "I don’t feel literate when it comes to food. I’m slowly achieving literacy. Food writing happened to me accidentally.",
+  "slug": "writer-mayukh-sen-on-grief-as-a-creative-force",
+  "who": "Writer Mayukh Sen",
+  "date": "2018-07-18",
+  "bg": "#548AEA",
+  "fg": "#F2F0EA",
+  "img": "https://tci-assets.s3.amazonaws.com/uploads/Mayukh-Sen-passport-crop.jpg"
+ },
+ {
+  "q": "I don't know if poets are always talking to a particular dead person or if it's just us in 300 years coming back to tell ourselves things or give ourselves information and language from the future to document.",
+  "slug": "poet-dorothea-lasky-on-poetry-as-a-spiritual-obligation",
+  "who": "Poet Dorothea Lasky",
+  "date": "2018-09-07",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://tci-assets.s3.amazonaws.com/uploads/Dorothea_Lasky_Passport_Crop-1.jpg"
+ },
+ {
+  "q": "I'm always on deadline. I've got to work efficiently. I've got an article due, so I'm researching it as I go, usually.",
+  "slug": "writer-and-historian-david-wondrich-on-inventing-your-own-job",
+  "who": "Writer and historian David Wondrich",
+  "date": "2018-09-13",
+  "bg": "#548AEA",
+  "fg": "#F2F0EA",
+  "img": "https://tci-assets.s3.amazonaws.com/uploads/Wondrich-passport-crop.jpg"
+ },
+ {
+  "q": "I think political art needs to be followed up by real action. Putting the body where the paintbrush is, so to speak.",
+  "slug": "musician-joan-baez-on-art-activism-and-letting-things-go",
+  "who": "Musician Joan Baez",
+  "date": "2019-01-07",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/y0nWEHU7QP44Nyu4w491"
+ },
+ {
+  "q": "To rebuild the world and punch through the construct of what you thought the world actually was is a really slow process.",
+  "slug": "cinematographer-kirsten-johnson-on-discovering-new-ways-to-see",
+  "who": "Cinematographer Kirsten Johnson",
+  "date": "2019-04-30",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/JxrzvXjKQ6SM5dSu9S3i"
+ },
+ {
+  "q": "You just know the experiences that are ingraining themselves on your consciousness forever as they are happening. You recognize, \"I am being changed right now.\"",
+  "slug": "writer-melissa-febos-on-facing-your-history-through-your-art",
+  "who": "Writer Melissa Febos",
+  "date": "2019-06-17",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/6a0pVNEUSaEXZ12nt8ZX"
+ },
+ {
+  "q": "We don't make things by ourselves; we're always making things with other people, whether we like it or not. We are a part of a continuum and everything being made is new, while also remaining dependent on the past.",
+  "slug": "artist-matthew-day-jackson-on-the-relationship-between-creation-and-play",
+  "who": "Artist Matthew Day Jackson",
+  "date": "2019-09-09",
+  "bg": "#F2F0EA",
+  "fg": "#8C8C8C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/E3TrZecSqS40H5jjRgnS"
+ },
+ {
+  "q": "Something is never done. If time and money and deadlines were no object, people would tweak until the cows came home.",
+  "slug": "mastering-engineer-heba-kadry-on-music-and-community",
+  "who": "Mastering engineer Heba Kadry",
+  "date": "2019-09-10",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/xLbTKGjAQiW3Bah60nIt"
+ },
+ {
+  "q": "I’m a very isolated human being. My study time is very important to me. My reading, my quiet time, is very, very important.",
+  "slug": "musician-mina-caputo-on-finding-your-true-self-working-with-others-and-touring-as-a-trans-woman",
+  "who": "Musician Mina Caputo",
+  "date": "2019-10-23",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/Zr4oWNJvTIOh5SK5bopV"
+ },
+ {
+  "q": "I would like to have contributed in a productive way to a narrative that will continue after I'm dead. I don't know if one can ever really know if that's the case. But one can hope.",
+  "slug": "chef-and-food-artist-jen-monroe-on-giving-people-something-to-chew-on",
+  "who": "Chef and food artist Jen Monroe",
+  "date": "2020-03-31",
+  "bg": "#FFAA00",
+  "fg": "#2C1E00",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/J5OYkXSsT6PDOpbeiIDi"
+ },
+ {
+  "q": "Everything's possible and that's good, and being open and capable of accepting lots of disparate things at the same time is key.",
+  "slug": "artist-rindon-johnson-on-navigating-the-tension-between-physical-and-digital-realms",
+  "who": "Artist and writer Rindon Johnson",
+  "date": "2020-05-14",
+  "bg": "#1B0699",
+  "fg": "#E4E0FF",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/bDgKRDmtSTOOt8ZIc8nY"
+ },
+ {
+  "q": "If the patient is dead, I'm not making a Frankenstein. I just start over again. It needs to feel fresh to me.",
+  "slug": "william-villalongo-on-discovering-materials-that-mean-something-to-you",
+  "who": "William Villalongo",
+  "date": "2020-08-07",
+  "bg": "#560C68",
+  "fg": "#F2F0EA",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/WILLIAMV-PASSPORT-CROP.jpg"
+ },
+ {
+  "q": "I actually tell my students to know where their place is. We don't live in a vacuum. That they are in conversation with the past, present and the future; and that conversation never ends.",
+  "slug": "artist-and-educator-angel-abreu-on-how-you-make-history-every-day",
+  "who": "Artist and educator Angel Abreu",
+  "date": "2020-11-11",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/GKfWGyXRQtCo1nq6fTjL"
+ },
+ {
+  "q": "My objective is for my photographs to dissolve time. I hope my work is successful and that it shows that memory does not die. I believe photographs are ghosts.",
+  "slug": "artist-stacy-renee-morrison-on-using-photography-to-create-what-you-can't-see",
+  "who": "Artist Stacy Renee Morrison",
+  "date": "2020-12-18",
+  "bg": "#F2F0EA",
+  "fg": "#8C8C8C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/e8CWG1UDR4eRVMUN5xR3"
+ },
+ {
+  "q": "It’s really interesting how the truth surfaces when you dedicate time to engage with people of diverse communities.",
+  "slug": "visual-artist-vibha-galhotra-on-finding-power-in-the-everyday",
+  "who": "Visual artist Vibha Galhotra",
+  "date": "2021-03-11",
+  "bg": "#5D8D42",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/eQ7jvnrJS6qhYYAaOQLU"
+ },
+ {
+  "q": "Deadlines help me wrap the project up, but they’re daunting and inhibiting in the early stages of creating something.",
+  "slug": "cartoonist-and-illustrator-adrian-tomine-on-being-open-to-new-approaches",
+  "who": "Cartoonist and illustrator Adrian Tomine",
+  "date": "2021-04-28",
+  "bg": "#CAE3FC",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/F3s4PtFLSXCpHB465hNK"
+ },
+ {
+  "q": "I think it's really important, especially as you get older, to keep an open mind and to understand what happens with you and your tastes with time—because time collapses upon itself.",
+  "slug": "musician-adam-vallely-on-taking-ego-out-of-your-process",
+  "who": "Musician Adam Vallely",
+  "date": "2021-06-16",
+  "bg": "#29386F",
+  "fg": "#EFF2FF",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/Ynjf5uMcRQmnw9frggEr"
+ },
+ {
+  "q": "The thing about anguish and time is that when you’re feeling volatile, time passes very slowly. It just feels like you’re locked. By pouring that energy into a creative act, you shave off bits of time.",
+  "slug": "composer-and-artist-fatima-al-qadiri-on-the-transformative-nature-of-creative-work",
+  "who": "Composer and artist Fatima Al Qadiri",
+  "date": "2021-07-21",
+  "bg": "#5D8D42",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/ClIRPbcNSBkuyl4WVbQl"
+ },
+ {
+  "q": "This is a constant conversation that I have with myself—what makes sense, and giving things time to mature and work.",
+  "slug": "musician-and-artist-lido-pimienta-on-the-discipline-and-patience-it-takes-to-make-creative-work",
+  "who": "Musician and artist Lido Pimienta",
+  "date": "2021-08-06",
+  "bg": "#42FFFF",
+  "fg": "#0F2BD4",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/yDFpOSXSQNqFOwCwMswU"
+ },
+ {
+  "q": "I hate to give the pandemic anything, but I will say that it did give me more time to revise the book.",
+  "slug": "musician-and-author-michelle-zauner-on-finding-ways-to-keep-going",
+  "who": "Musician and author Michelle Zauner",
+  "date": "2021-11-23",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/NNxI6aFwQ5GG49ZN6xGj"
+ },
+ {
+  "q": "Everyone is waiting to hear some good news, and I think that sense of hopefulness is something that's universal.",
+  "slug": "artist-maia-ruth-lee-on-working-intuitively",
+  "who": "Artist Maia Ruth Lee",
+  "date": "2022-02-18",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/zNpv7MDdSgGbQJhwXWK4"
+ },
+ {
+  "q": "Editing becomes the place where the past and present start to connect.",
+  "slug": "author-ocean-vuong-on-being-generous-in-your-work",
+  "who": "Author Ocean Vuong",
+  "date": "2022-03-15",
+  "bg": "#548AEA",
+  "fg": "#F2F0EA",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/ocean1passport.jpg"
+ },
+ {
+  "q": "Any time that you're putting your own voice out there, it's terrifying. It takes time to learn to be vulnerable.",
+  "slug": "photographer-and-artist-chris-burkard-on-not-shying-away-from-opportunity",
+  "who": "Photographer and artist Chris Burkard",
+  "date": "2022-06-10",
+  "bg": "#548AEA",
+  "fg": "#F4F4F4",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/LTl67R9OSVy9VzbW6fZo"
+ },
+ {
+  "q": "In my experience, so much of the drama of being alive takes place in between all those moments.",
+  "slug": "writer-clare-sestanovich-on-the-challenge-of-saying-what-you-really-mean",
+  "who": "Writer Clare Sestanovich",
+  "date": "2022-06-23",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/tRg27ppFR6GL1Qmp5ZFQ"
+ },
+ {
+  "q": "For most people and for me, it was a very slow, tiny thing after tiny thing accumulating over time.",
+  "slug": "musician-julia-jacklin-on-protecting-your-definition-of-success",
+  "who": "Musician Julia Jacklin",
+  "date": "2022-08-22",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/lBbsu6QIQMGlp2URF3EY"
+ },
+ {
+  "q": "The creative state itself is this eternal state of communion with something much greater than any work it can leave behind.",
+  "slug": "musician-and-novelist-john-darnielle-on-debating-your-inner-critic",
+  "who": "Musician and novelist John Darnielle",
+  "date": "2022-11-03",
+  "bg": "#DD3D00",
+  "fg": "#EDEDED",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/kRZKS3PtS6i3kPetTHD9"
+ },
+ {
+  "q": "There's not enough time to do all the things I want to do. Why would I take up more time doing something I don't want to do?",
+  "slug": "producer-and-multi-instrumentalist-bibio-on-managing-expectations",
+  "who": "Producer and multi-instrumentalist Bibio",
+  "date": "2022-12-05",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/6GqAabQ4RrmAtjGziWbC"
+ },
+ {
+  "q": "At that age, you're just projecting your entire future. And you assume that whatever you're doing then is going to last forever.",
+  "slug": "writer-haley-nahman-on-evolving-in-your-creative-life",
+  "who": "Writer Haley Nahman",
+  "date": "2023-01-03",
+  "bg": "#F2F0EA",
+  "fg": "#8C8C8C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/RiPrlbFCQKWRPNhItiwC"
+ },
+ {
+  "q": "I view deadlines as getting stuff off my plate, so I can write a poem, read a poem, or read something else I love.",
+  "slug": "hanif-abdurraqib-on-the-writer-as-archivist",
+  "who": "Writer Hanif Abdurraqib",
+  "date": "2023-02-03",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://s3.amazonaws.com/tci-assets/uploads/Hanif_passport.jpg"
+ },
+ {
+  "q": "I don't need to hear everyone else's opinion on my stuff that is about me, and I think it took me a really long time to realize that.",
+  "slug": "songwriter-anna-b-savage-on-learning-to-be-gentle-with-yourself",
+  "who": "Songwriter Anna B Savage",
+  "date": "2023-03-22",
+  "bg": "#EDDA46",
+  "fg": "#000000",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/3JtlAzFTSCcYXn4H3p3q"
+ },
+ {
+  "q": "I have learned to listen to my body and whenever I need to take a day or a morning or an evening off, I just do it.",
+  "slug": "musician-and-comedian-eve-parker-finley-on-staying-grounded-in-your-creativity",
+  "who": "Musician and comedian Eve Parker Finley",
+  "date": "2023-05-05",
+  "bg": "#560C68",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/9yxZ678MSLyS983gDOTu"
+ },
+ {
+  "q": "Humans crave containment: beginnings, ends, finish lines, goals, destinations. Without containment we would be overwhelmed with the vastness and indifference of the universe. Containment brings the horizon a little bit closer.",
+  "slug": "anelise-chen-on-establishing-balance",
+  "who": "Writer Anelise Chen",
+  "date": "2023-05-08",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://tci-assets.s3.amazonaws.com/uploads/anelise-chen-PASSPORT_CROP.jpg"
+ },
+ {
+  "q": "I was trying to play music every day, and then there would be this huge rush and something would just pour out of me.",
+  "slug": "musician-scout-gillet-on-the-importance-of-ritual",
+  "who": "Musician Scout Gillett",
+  "date": "2023-05-12",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/thsPijuoRxGwwtgVr36q"
+ },
+ {
+  "q": "If you don't acknowledge the present, you can never acknowledge the future. You start to fantasize about this clear space that resides in the future, without realizing that you're already in that clear space.",
+  "slug": "artist-jacolby-satterwhite-on-trusting-your-own-process",
+  "who": "Artist Jacolby Satterwhite",
+  "date": "2023-06-21",
+  "bg": "#DDDA00",
+  "fg": "#59107C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/UbmHb201Q9WX2exCxaze"
+ },
+ {
+  "q": "What I expect to happen is that when I have more time to focus, the quality of my work is going to increase dramatically.",
+  "slug": "comedian-and-scientist-victor-varnado-on-treating-your-creative-work-like-a-business",
+  "who": "Comedian and scientist Victor Varnado",
+  "date": "2023-06-26",
+  "bg": "#F8B494",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/nDPELieQLrF8dBCl93Qd"
+ },
+ {
+  "q": "Teaching and motherhood have changed my whole relationship to time. I think more in terms of seasons and semesters now, phases when you’re really inside a work, and phases when your greatest demands are elsewhere.",
+  "slug": "author-tania-james-on-prioritizing-your-creative-work",
+  "who": "Author Tania James",
+  "date": "2023-07-05",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/rw1VzCETT6qhGayaXrmS"
+ },
+ {
+  "q": "It's really important to actually archive what's happening, because it's not a guarantee that it will be this forever.",
+  "slug": "director-and-filmmaker-margot-bowman-on-trusting-your-intuition",
+  "who": "Director and filmmaker Margot Bowman",
+  "date": "2023-07-31",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/rNOUyrqER1JI6znPhx5X"
+ },
+ {
+  "q": "There's something about reminding myself that I'm living on the edge of existence at this moment, it seems to open up some kind of opportunity to do something new, or for a different result to arise.",
+  "slug": "actor-writer-and-comic-entertainer-ikechukwu-ufomadu-on-embracing-trial-and-error",
+  "who": "Actor, writer, and comic entertainer Ikechukwu Ufomadu",
+  "date": "2023-08-16",
+  "bg": "#42FFFF",
+  "fg": "#0F2BD4",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/99CoDvyT9Gf7lXNpwagE"
+ },
+ {
+  "q": "It’s hard to be patient. I'm not a patient person, so I picked a weird path; it's the worst path for an impatient person.",
+  "slug": "writer-anna-dorn-on-changing-your-attitude-towards-your-work",
+  "who": "Writer Anna Dorn",
+  "date": "2023-08-29",
+  "bg": "#B5D536",
+  "fg": "#315A45",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/Q1rcbsjtQZ26KID2H0an"
+ },
+ {
+  "q": "I see now I was just planting seeds the whole time. Now, in the last couple of years, I’ve really been watching them grow and bear fruit and blossom.",
+  "slug": "television-writer-and-journalist-alex-zaragoza-on-investing-in-yourself",
+  "who": "Television writer and journalist Alex Zaragoza",
+  "date": "2023-09-08",
+  "bg": "#315E47",
+  "fg": "#FBDBEB",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/YWvue94ASrebqkBhvAYU"
+ },
+ {
+  "q": "Creative work shouldn’t just be about a future reward, because the future isn’t promised. It should also be rewarding in the present.",
+  "slug": "writer-and-translator-carina-del-valle-schorske-on-the-importance-of-having-a-strategy",
+  "who": "Writer and translator Carina del Valle Schorske",
+  "date": "2023-09-28",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/LTTyLJISXeztYjb9hsbA"
+ },
+ {
+  "q": "My ideal is to write every morning, first thing. Patient, slow, deliberate, tortoise-like—really opposite from Chris.",
+  "slug": "writers-chris-bachelder-and-jennifer-habel-on-collaborating-with-your-spouse",
+  "who": "Writers Chris Bachelder and Jennifer Habel",
+  "date": "2023-11-15",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/vPQFl90STuIq18PRyytL"
+ },
+ {
+  "q": "As with memory, and with writing, there are imprints atop imprints atop imprints.",
+  "slug": "writer-and-teacher-claire-donato-on-clarifying-your-creative-work-by-clarifying-yourself",
+  "who": "Writer and teacher Claire Donato",
+  "date": "2024-01-09",
+  "bg": "#5D8D42",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/yJmCgCVQQiicVbQfbi2f"
+ },
+ {
+  "q": "It's hard, because no matter how much time, energy, effort we put into things, it's not up to us.",
+  "slug": "broadway-actor-lorna-courtney-on-cementing-a-future-in-an-uncertain-industry",
+  "who": "Broadway actor Lorna Courtney",
+  "date": "2024-02-12",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/bu7Y86VTySDFVImvoXUg"
+ },
+ {
+  "q": "The book only started to take form when I found these ghostly, haunting images of the hysteria patients.",
+  "slug": "writer-emily-wells-on-being-creativie-within-the-constraints-of-chronic-illness",
+  "who": "Writer Emily Wells",
+  "date": "2024-05-15",
+  "bg": "#42FFFF",
+  "fg": "#0F2BD4",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/VrF3qmmLTxOVlmp9XBpp"
+ },
+ {
+  "q": "I think you have to come back to an awareness of mortality and to seek out lives of meaning and beauty. And I think that fiction can be a really good way to give us ideas of how we can be in the world",
+  "slug": "writer-and-musician-margaret-killjoy-on-the-magic-of-making-art",
+  "who": "Writer and musician Margaret Killjoy",
+  "date": "2024-06-25",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/davcLncHQ2ea5gRE6Ht7"
+ },
+ {
+  "q": "I’m very appreciative that you and I exercise a lot of patience and curiosity to stay in a present and open state.",
+  "slug": "visual-artists-jamie-nami-kim-and-paul-waters-on-collaboration",
+  "who": "Visual artists Jamie Nami Kim and Paul Waters",
+  "date": "2024-07-03",
+  "bg": "#CAE3FC",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/tEOqUzJFR9Jtppkygx9G"
+ },
+ {
+  "q": "Within the commercial world, so many people have deadlines that exist that are inflexible. We never want to apply pressure to people.",
+  "slug": "editor-jason-evans-this-long-century-on-understanding-that-nothing-is-done-in-isolation",
+  "who": "Editor Jason Evans (This Long Century)",
+  "date": "2024-07-04",
+  "bg": "#F4F4F4",
+  "fg": "#EF00BF",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/AXI3kxjQGm5B7YrPtQxQ"
+ },
+ {
+  "q": "If you're channeling pure spirit and you make your human filter as diminished as possible, that's how art is going to stand the test of time because spirit is eternal.",
+  "slug": "musician-raveena-on-creating-something-both-honest-and-timeless",
+  "who": "Musician Raveena",
+  "date": "2024-07-11",
+  "bg": "#0072CE",
+  "fg": "#EFD7E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/wdzW37SaTGylaqgfSJIl"
+ },
+ {
+  "q": "There are so many things in this world that I want to read, and I have no time for things that I don't.",
+  "slug": "scent-artist-david-seth-moltz-d-dot-s-and-durga-on-starting-small",
+  "who": "Scent artist David Seth Moltz (D.S. & Durga)",
+  "date": "2024-10-04",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/KoKqMaOERSiPk5SxZTj4"
+ },
+ {
+  "q": "Making the work is in itself an act of hope. It's a belief in your life as it is, as it will be, and the way that your art carries through your lifespan. It's a belief in the future.",
+  "slug": "musician-emily-wells-on-being-dedicated-to-art-as-a-daily-practice",
+  "who": "Musician Emily Wells",
+  "date": "2024-10-16",
+  "bg": "#94877E",
+  "fg": "#F3ECE2",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/z905p4oSXqNoovHP04v5"
+ },
+ {
+  "q": "Perceptions change like memory does, the edges get softened, that’s part of life.",
+  "slug": "archivist-and-editor-laird-borrelli-persson-on-bringing-depth-to-the-superficial",
+  "who": "Archivist and editor Laird Borrelli-Persson",
+  "date": "2024-10-17",
+  "bg": "#CAE3FC",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/tXhksiT7RmSfpWt0YEce"
+ },
+ {
+  "q": "Begin it now. Don't wait. The time will pass anyway.",
+  "slug": "musician-kelly-lee-owens-on-knowing-who-you-are-and-what-you-do",
+  "who": "Musician Kelly Lee Owens",
+  "date": "2024-10-22",
+  "bg": "#548AEA",
+  "fg": "#F4F4F4",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/vSItcLhwTnEZW9LI3dVA"
+ },
+ {
+  "q": "I thought I could just keep running like a machine and not really take time for myself while I showed up for other people.",
+  "slug": "author-and-wellness-facilitator-cat-lantigua-on-what-you-can-learn-from-burnout",
+  "who": "Author and wellness facilitator Cat Lantigua",
+  "date": "2024-11-18",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/6MRtsKwZSQ2vv1TnGxw1"
+ },
+ {
+  "q": "I'm the type of person that when I know something ain't it, it don't take no time for me to switch.",
+  "slug": "chicago-footwork-artist-litebulb-on-finding-space-to-focus",
+  "who": "Chicago footwork artist Litebulb",
+  "date": "2024-12-10",
+  "bg": "#DDDA00",
+  "fg": "#59107C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/op2I7wQsSPKKbLPJPVs8"
+ },
+ {
+  "q": "Pay attention to unlikely niches and unlikely combinations, and choose topics that accrue over time.",
+  "slug": "author-and-illustrator-linda-liukas-on-building-a-career-out-of-curiosity",
+  "who": "Author and illustrator Linda Liukas",
+  "date": "2024-12-11",
+  "bg": "#315E47",
+  "fg": "#FBDBEB",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/sK3TKoRhT5aOKLUJvvpN"
+ },
+ {
+  "q": "I could die at any second, and you want me to hold off on my best material for when I’m older?",
+  "slug": "writer-and-science-journalist-sabrina-imbler-on-not-waiting-to-release-your-best-work",
+  "who": "Writer and science journalist Sabrina Imbler",
+  "date": "2024-12-19",
+  "bg": "#929292",
+  "fg": "#FFFFFF",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/FOvYysTVQ92Y2fPExwKX"
+ },
+ {
+  "q": "But what’s great about the stories is that I can see the better part of my spirit or my talent, I can see myself trying to be alive on the page.",
+  "slug": "author-and-editor-ed-park-on-focusing-on-the-longer-journey",
+  "who": "Author and editor Ed Park",
+  "date": "2025-01-16",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/WwxAlWbkQsaHcxaLO4ej"
+ },
+ {
+  "q": "Over the past few years, I've been trying to get more comfortable with the idea of impermanence. I think I used to be really, really afraid of death, and I still am.",
+  "slug": "painter-and-photographer-rebecca-storm-on-the-burden-of-choice",
+  "who": "Painter and photographer Rebecca Storm",
+  "date": "2025-02-26",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/yWc233ruTGtxYqIBdngA"
+ },
+ {
+  "q": "These ideas continue to evolve, intertwine, overlap, and extend into one another, with collaborations carrying forward its dim lights. A project is not an ending, but a point from which the work picks up and develops further.",
+  "slug": "architect-sumayya-vally-on-why-a-project-is-not-an-ending",
+  "who": "Architect Sumayya Vally",
+  "date": "2025-02-27",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/zy8QzacCQkqEIiLuIucU"
+ },
+ {
+  "q": "I'd love to have more time. I make sure my weekends have a lot of free time for art and creativity and slowing down.",
+  "slug": "musician-christine-davis-christian-mistress-on-keeping-the-pressure-off-your-creative-process",
+  "who": "Musician Christine Davis (Christian Mistress)",
+  "date": "2025-03-18",
+  "bg": "#D8AB38",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/h1dtdUbQ72blLWtlNV4Z"
+ },
+ {
+  "q": "I see finish lines. The completion of a body of work is the finish line that I'm chasing, and time is no object.",
+  "slug": "musician-justin-hawkins-the-darkness-on-keeping-the-joy-in-what-you-do",
+  "who": "Musician Justin Hawkins (The Darkness)",
+  "date": "2025-03-27",
+  "bg": "#F8B494",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/lx3RpPQwWOQPeCWd0cwd"
+ },
+ {
+  "q": "It's all cumulative. As long as you don’t stop doing and just keep making stuff, the motion will lead you somewhere and everything you’ve done in the past will matter.",
+  "slug": "podcaster-and-musician-jake-brennan-on-being-disciplined",
+  "who": "Podcaster and musician Jake Brennan",
+  "date": "2025-04-11",
+  "bg": "#29386F",
+  "fg": "#EFF2FF",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/P3h4bkHwT5a8GdkzORR6"
+ },
+ {
+  "q": "For me, jobs like waitressing were not very beneficial because I didn’t know when I was getting off of work.",
+  "slug": "author-kiley-reid-on-money-and-day-jobs-and-creative-work",
+  "who": "Author Kiley Reid",
+  "date": "2025-04-16",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/zfquY7r6T26RBQEJrm0L"
+ },
+ {
+  "q": "We need to get comfortable with the fruits of our labor coming when we're not alive because that's what our ancestors did for us.",
+  "slug": "educator-and-technologist-joycelyn-longdon-on-complicating-what-is-normal",
+  "who": "Educator and technologist Joycelyn Longdon",
+  "date": "2025-04-21",
+  "bg": "#5D8D42",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/ysJNsVD5SIldEYokX3ea"
+ },
+ {
+  "q": "I'm 78 as I talk, but I feel younger now than I have felt in many years, because I'm literally able to be creative more and more of the time. And there's nothing that feels better than being creative.",
+  "slug": "cartoonist-denis-kitchen-on-coming-full-circle-in-your-work",
+  "who": "Cartoonist Denis Kitchen",
+  "date": "2025-05-01",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/aU43VTyURAmJGQIYPemF"
+ },
+ {
+  "q": "Love what you love right now and love it as hard as possible because there will come a day when you'll love something else more.",
+  "slug": "comedian-and-artist-jasmine-rogers-on-seizing-the-creative-moment-before-it-passes",
+  "who": "Comedian and artist Jasmine Rogers",
+  "date": "2025-06-04",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/gcWlKA1wQgKH1T33ocHd"
+ },
+ {
+  "q": "There’s a version that gets put out, but then the artist in the future is still finding ways to refresh the thing that they’ve already made. You can always return.",
+  "slug": "photographer-and-artist-steven-molina-contreras-on-pacing-yourself",
+  "who": "Photographer and artist Steven Molina Contreras",
+  "date": "2025-06-18",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/bXkxwChTRxqbZT3CjJOJ"
+ },
+ {
+  "q": "I don't think the time we live in really allows for much time for reflection about life between projects.",
+  "slug": "musician-and-interdisciplinary-artist-kilo-kish-on-taking-care-of-yourself",
+  "who": "Musician and interdisciplinary artist Kilo Kish",
+  "date": "2025-06-19",
+  "bg": "#EDDA46",
+  "fg": "#000000",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/IblstxkaQqGrMFExaxcg"
+ },
+ {
+  "q": "It seems like a gift to be able to speak to people across generations and talk to people when you're dead.",
+  "slug": "writer-stephanie-wambugu-on-speaking-across-generations",
+  "who": "Writer Stephanie Wambugu",
+  "date": "2025-07-10",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/SdcL3eolSy2S8dENvm0U"
+ },
+ {
+  "q": "Writing with the understanding that queer time is real, is serious, is meaningful, is how I keep making work that makes me feel free.",
+  "slug": "writer-and-artist-eloghosa-osunde-on-respecting-yourself",
+  "who": "Writer and artist Eloghosa Osunde",
+  "date": "2025-08-26",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/SzqtTdPUQuCFk8b0rRwF"
+ },
+ {
+  "q": "That's my first memory of just being completely consumed in the river of some creative pull without inhibition. I think maybe my whole life is trying to get back to that. Like a lot of artists I think.",
+  "slug": "musician-cornelia-murr-on-letting-your-work-belong-to-the-world",
+  "who": "Musician Cornelia Murr",
+  "date": "2025-09-29",
+  "bg": "#F8B494",
+  "fg": "#494949",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/1oNGoI1QLOfyuGtW4CLf"
+ },
+ {
+  "q": "Alone time is a state of mind because I am sharing space. I rarely get my own room. So, I can't count on it.",
+  "slug": "musician-esther-rose-on-questioning-your-path-and-forging-new-ones",
+  "who": "Musician Esther Rose",
+  "date": "2025-11-24",
+  "bg": "#315E47",
+  "fg": "#FBDBEB",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/1LDeONhReeTwITLZOlyA"
+ },
+ {
+  "q": "When I spend the time reading books, it feels like time is expanding. It doesn't waste time. If I never wrote another book, and all I did was read, and I got to the end of my life, it would feel like a life well spent.",
+  "slug": "writer-and-comedian-amy-silverberg-on-how-to-take-the-pressure-off-the-process",
+  "who": "Writer and comedian Amy Silverberg",
+  "date": "2026-01-12",
+  "bg": "#B5D536",
+  "fg": "#315A45",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/Gzo4zXSKRUitVdAa1PgY"
+ },
+ {
+  "q": "The nice thing about teaching is that it allows me to structure my day, so my mornings are free for creative work.",
+  "slug": "songwriter-and-musician-yea-ming-chen-on-giving-yourself-permission",
+  "who": "Songwriter and musician Yea-Ming Chen",
+  "date": "2026-04-07",
+  "bg": "#F6FC90",
+  "fg": "#071BC9",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/kQ6cStvZSXmE9KFiAVx8"
+ },
+ {
+  "q": "The amount of cycles that repeat in the world already, that we can physically see, are so abundant. The idea that we just continue onto a different cycle just really makes sense to me.",
+  "slug": "musician-searows-on-making-art-in-an-overwhelming-world",
+  "who": "Musician Searows",
+  "date": "2026-04-24",
+  "bg": "#31668A",
+  "fg": "#F0F3E5",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/O8ud4jxQRB6wQo7oBYsS"
+ },
+ {
+  "q": "Making objects feels really impactful. They take up physical space. And ceramics last forever. I mean, I used to joke like, \"Maybe I'll get a retrospective when the aliens are uncovering things on Earth.\"",
+  "slug": "sculptor-maddy-inez-on-the-power-of-legacy-and-community-based-practice",
+  "who": "Sculptor Maddy Inez",
+  "date": "2026-04-27",
+  "bg": "#FFAA00",
+  "fg": "#2C1E00",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/W9U3Q8OTXK3R3OPEMdlP"
+ },
+ {
+  "q": "I don't have to write an epic that spans generations, continents, time. It could take place in a very tiny moment, and it could exist in that tiny space I've given it.",
+  "slug": "writer-souvankham-thammavongsa-on-not-filling-in-whats-missing",
+  "who": "Writer Souvankham Thammavongsa",
+  "date": "2026-05-08",
+  "bg": "#560C68",
+  "fg": "#F2F0EA",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/D1DrrUKTlWdORUzQBwXi"
+ },
+ {
+  "q": "I think certain moments in our lives do function as these little portals that close over time. Access isn't unlimited.",
+  "slug": "novelist-filmmaker-and-musician-eliza-barry-callahan-on-developing-tolerance-for-uncertainty",
+  "who": "Novelist, filmmaker, and musician Eliza Barry Callahan",
+  "date": "2026-05-13",
+  "bg": "#F2F0EA",
+  "fg": "#EA4062",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/GAyMrhWwSMG69lHqQ8KM"
+ },
+ {
+  "q": "Once you have time, you realize how valuable it is. I think time is honestly the most valuable thing we have.",
+  "slug": "painter-ileana-garcia-magoda-on-the-artists-relationship-with-time",
+  "who": "Painter Ileana García Magoda",
+  "date": "2026-06-18",
+  "bg": "#315E47",
+  "fg": "#FBDBEB",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/olvucT6ETIaoqVGICr4g"
+ },
+ {
+  "q": "It feels like I'm trying to understand where I can act within institutions, and also when it's time to go.",
+  "slug": "artist-edie-fake-on-communicating-with-images",
+  "who": "Artist, activist, and author Edie Fake",
+  "date": "2026-07-31",
+  "bg": "#DDDA00",
+  "fg": "#59107C",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/P2vAQYejRrK1AWO3UZPV"
+ },
+ {
+  "q": "Photography can allow—even in the most devastating of experiences and stories—one to find beauty by looking back, by being present, by allowing all of those things: the past, present, and possible future to exist together in an image.",
+  "slug": "photographer-trent-davis-bailey-on-art-as-therapy",
+  "who": "Photographer Trent Davis Bailey",
+  "date": "2026-08-28",
+  "bg": "#FF8F7B",
+  "fg": "#180B19",
+  "img": "https://cdn.fs.thecreativeindependent.com/resize=width:80,height:80,fit:crop/PUkpjj2sRlq5JaaBod4N"
+ }
+]

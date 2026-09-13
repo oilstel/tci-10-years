@@ -1,0 +1,5 @@
+# The full TCI site source, used only as reference while building this; nothing
+# here loads from it, and it's very large
+the_creative_independent-master/
+
+.DS_Store
