@@ -803,6 +803,9 @@ p#credits {
 @media(max-width: 535px) {
     .year-marks text { font-size: 0.85px; }
     .spiral-mark text { font-size: 0.7px; }
+    /* at that size the outermost labels (2026) run past the drawing's edge;
+       let them spill into the side margin instead of being clipped */
+    #spiral-archive svg { overflow: visible; }
 }
 .years-toggle {
     position: absolute;
