@@ -1914,6 +1914,79 @@ nav#jump a:hover {
 }
 
 /* ---------------------------------------------------------------
+   The countdown to the next ten years: a line with a mark for each
+   year, and a snail standing where today falls along it.
+   --------------------------------------------------------------- */
+.countdown {
+    margin-top: 2em;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+.countdown-clock {
+    font-variant-numeric: tabular-nums;
+}
+.timeline {
+    position: relative;
+    height: 120px;
+    margin: 0.5em 0 0;
+}
+/* the line itself, with room above for the snail and below for the years */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 80px;
+    border-top: 1px solid var(--ink);
+}
+.timeline-years {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.timeline-years li {
+    position: absolute;
+    top: 80px;
+    transform: translateX(-50%);
+    padding-top: 12px;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1;
+}
+.timeline-years li::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    height: 11px;
+    border-left: 1px solid var(--ink);
+}
+.timeline-years li:first-child { transform: none; }
+.timeline-years li:first-child::before { left: 0; }
+.timeline-years li:last-child { transform: translateX(-100%); }
+.timeline-years li:last-child::before { left: auto; right: 0; }
+/* the foot of the snail sits 77% of the way down the drawing */
+.timeline-snail {
+    --snail-w: 84px;
+    --t: 0;                             /* share of the ten years gone by, set by countdown.js */
+    position: absolute;
+    top: 80px;
+    left: calc((100% - var(--snail-w)) * var(--t));
+    width: var(--snail-w);
+    height: auto;
+    max-width: none;
+    transform: translateY(-77%);
+    pointer-events: none;
+}
+
+@media(max-width: 535px) {
+    .timeline-years li { font-size: 11px; }
+    .timeline-years li:nth-child(even) span { visibility: hidden; }
+    .timeline-snail { --snail-w: 60px; }
+}
+
+/* ---------------------------------------------------------------
    The dotted underline, for links in running text and the index words.
    Browsers will not break a dotted text-decoration round descenders, so
    the line is drawn as a background instead, and a halo of paper-coloured

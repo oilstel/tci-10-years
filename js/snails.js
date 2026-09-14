@@ -195,6 +195,14 @@ const SNAIL_VIDEOS = [
     const shelf = document.querySelector('#library .books');
     if (!shelf) return;
 
+    // a different order on every visit
+    const shelved = [...shelf.querySelectorAll('.book')];
+    for (let i = shelved.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shelved[i], shelved[j]] = [shelved[j], shelved[i]];
+    }
+    shelf.append(...shelved);
+
     let cols = 0;
     function mark() {
         const n = getComputedStyle(shelf).gridTemplateColumns.split(' ').length;
