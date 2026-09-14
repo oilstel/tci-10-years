@@ -185,3 +185,97 @@ const SNAIL_VIDEOS = [
         { threshold: 0.2 }).observe(list);
     schedule(rand(5000, 10000));
 })();
+
+
+// The library shelves: the first and last thing on every shelf is marked so
+// its plank can run out to the edges of the browser, the last shelf included,
+// however few it holds. And two drawn snails crawl along the planks, very
+// slowly, turning round at each end.
+(function () {
+    const shelf = document.querySelector('#library .books');
+    if (!shelf) return;
+
+    let cols = 0;
+    function mark() {
+        const n = getComputedStyle(shelf).gridTemplateColumns.split(' ').length;
+        if (n === cols) return false;
+        cols = n;
+        const items = [...shelf.querySelectorAll('.book')];
+        items.forEach((el, i) => {
+            el.classList.toggle('row-start', i % cols === 0);
+            el.classList.toggle('row-end', i % cols === cols - 1 || i === items.length - 1);
+        });
+        return true;
+    }
+    mark();
+
+    const SRC_RIGHT = 'images/email-snail-note.png';        // faces right
+    const SRC_LEFT = 'images/email-snail-note-flip.png';    // faces left
+    const FOOT = 0.77;                // the foot line, as a share of the drawing's height
+    const SPEED = 7;                  // px per second, slower than the index snail
+    const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const width = () => window.innerWidth <= 535 ? 64 : 96;
+
+    // the top edge of each shelf's plank, relative to the shelf
+    function planks() {
+        const top = shelf.getBoundingClientRect().top;
+        const ys = [];
+        shelf.querySelectorAll('.book.row-start .book-cover').forEach(c => {
+            ys.push(c.getBoundingClientRect().bottom - top);
+        });
+        return ys;
+    }
+
+    const crawlers = [0, 1].map(() => {
+        const img = document.createElement('img');
+        img.className = 'shelf-crawler';
+        img.alt = '';
+        img.setAttribute('aria-hidden', 'true');
+        shelf.append(img);
+        return { img, timer: 0 };
+    });
+
+    function place() {
+        const ys = planks();
+        const W = width(), H = W * 136 / 242;
+        const span = shelf.clientWidth - W;
+        // two different shelves where there are two
+        const rows = ys.map((_, i) => i).sort(() => Math.random() - 0.5);
+        crawlers.forEach((c, i) => {
+            clearTimeout(c.timer);
+            c.y = ys[rows[i % rows.length]] - H * FOOT;
+            c.x = Math.random() * span;
+            c.dir = Math.random() < 0.5 ? 1 : -1;
+            c.img.style.width = W + 'px';
+            c.img.style.transition = 'none';
+            c.img.src = c.dir > 0 ? SRC_RIGHT : SRC_LEFT;
+            c.img.style.transform = `translate(${c.x}px, ${c.y}px)`;
+            if (!still) c.timer = setTimeout(() => crawl(c, span), 1500 + Math.random() * 3000);
+        });
+    }
+
+    function crawl(c, span) {
+        const to = c.dir > 0 ? span : 0;
+        const ms = Math.abs(to - c.x) / SPEED * 1000;
+        void c.img.offsetWidth;
+        c.img.style.transition = `transform ${ms}ms linear`;
+        c.img.style.transform = `translate(${to}px, ${c.y}px)`;
+        c.timer = setTimeout(() => {
+            // a rest at the end of the plank, then back the other way
+            c.x = to;
+            c.dir = -c.dir;
+            c.img.style.transition = 'none';
+            c.img.src = c.dir > 0 ? SRC_RIGHT : SRC_LEFT;
+            c.timer = setTimeout(() => crawl(c, span), 2000 + Math.random() * 4000);
+        }, ms);
+    }
+
+    // images lay out the shelf heights, so wait for them before measuring
+    window.addEventListener('load', place);
+    let resizeTimer = 0;
+    window.addEventListener('resize', () => {
+        mark();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(place, 200);
+    });
+})();

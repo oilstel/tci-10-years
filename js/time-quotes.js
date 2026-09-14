@@ -194,8 +194,10 @@
 
     function next() {
         if (!quotes.length || paused) return;
-        // hold off while the spiral is replaying its growth
-        if (mount.classList.contains('growing')) return schedule(1000);
+        // hold off while the spiral is replaying its growth, or showing only
+        // one kind of piece
+        if (mount.classList.contains('growing') ||
+            mount.classList.contains('filtering')) return schedule(1000);
         let i = Math.floor(Math.random() * quotes.length);
         if (i === last) i = (i + 1) % quotes.length;
         last = i;
@@ -216,7 +218,7 @@
         const lbl = btn.querySelector('.lbl');
         const paint = () => {
             btn.setAttribute('aria-pressed', String(paused));
-            lbl.textContent = paused ? 'Show quotes' : 'Hide quotes';
+            lbl.textContent = paused ? 'Play quotes' : 'Pause quotes';
         };
         paint();
         btn.addEventListener('click', () => {
@@ -231,6 +233,12 @@
         });
         controls.appendChild(btn);
     }
+
+    // picking one kind of piece in the dropdown clears a quote that is up;
+    // next() holds any new one back until the filter is set to All again
+    new MutationObserver(() => {
+        if (mount.classList.contains('filtering') && dismissCurrent) dismissCurrent();
+    }).observe(mount, { attributes: true, attributeFilter: ['class'] });
 
     fetch('js/time-quotes.json')
         .then(r => r.json())

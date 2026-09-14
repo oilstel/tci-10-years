@@ -43,11 +43,23 @@ header {
     margin-bottom: 30px;
 }
 #top-spiral {
+    position: relative;               /* holds the coloured pixels */
     display: block;
     width: 111px;
     height: 101px;
     background: url("../images/logo-spiral.svg") no-repeat;
     background-size: 100% 100%;
+}
+/* one pixel of the spiral turning a palette colour, then fading back */
+#top-spiral .logo-pixel {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease;
+}
+#top-spiral .logo-pixel.on {
+    opacity: 1;
+    transition: opacity 0.8s ease;
 }
 nav#modes {
     position: absolute;
@@ -106,8 +118,10 @@ p {
     line-height: 1.5em;
     margin: 0 auto 1.5em auto;
 }
+/* links in running text: black, with the drawn dotted underline defined
+   at the end of this file (shared with the word index) */
 p a {
-    color: #0000EE;
+    color: var(--ink);
 }
 p.signoff {
     margin-top: 2em;
@@ -449,8 +463,7 @@ button.more:hover {
 
 /* Credits */
 p#credits {
-    font-size: 11px;
-    font-style: italic;
+    font-size: 14px;
     margin-top: 50px;
     border-top: 1px dotted var(--faint);
     padding-top: 10px;
@@ -546,13 +559,24 @@ p#credits {
    transparency, so it is inverted to graphite to sit on the paper.
    --------------------------------------------------------------- */
 
+/* Rows of shelves. The books sit in a band capped at 1725px, like the word
+   section; no gap between columns, so each book's stretch of dotted plank
+   joins its neighbour's, and the planks at either end of a row run on out
+   to the edges of the browser (snails.js marks those ends). */
 .books {
+    --cover-h: 300px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 34px 24px;
-    margin-top: 1.4em;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    column-gap: 0;
+    row-gap: 56px;
+    width: min(100vw, 1725px);
+    margin-left: calc(50% - min(50vw, 862.5px));
+    margin-top: 2.4em;
+    padding: 0;
+    position: relative;               /* holds the crawling snails */
 }
 .book {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -561,11 +585,47 @@ p#credits {
     font-size: 16px;
     line-height: 1.5em;
 }
+.book .book-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+/* the books stand on the shelf: covers sit on the plank's top edge */
+.book .book-cover {
+    position: relative;
+    height: var(--cover-h);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 18px;
+    margin-bottom: 34px;
+}
+/* the plank: a dotted top edge and a dotted lower edge */
+.book .book-cover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px;
+    border-top: 1px dotted var(--ink);
+    border-bottom: 1px dotted var(--ink);
+    opacity: 0.7;
+}
 .book img {
     width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    max-height: calc(var(--cover-h) - 12px);
+    object-fit: contain;
+    object-position: bottom;
     filter: invert(1);
+}
+.book .book-title,
+.book .book-author,
+.book .book-pdf,
+.book .book-size {
+    margin-left: 13px;
+    margin-right: 13px;
 }
 .book .book-title {
     align-self: flex-start;
@@ -576,12 +636,27 @@ p#credits {
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
-.book:hover .book-title {
+.book .book-link:hover .book-title {
     text-decoration: underline;
 }
+/* title, author, link and size all sit on the same 1.5em line spacing */
 .book .book-author {
     color: var(--muted);
-    padding: 3px 5px 0 5px;
+    padding: 0 5px;
+}
+.book .book-pdf {
+    align-self: flex-start;
+    padding: 0 5px;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.book .book-pdf:hover {
+    text-decoration-style: dotted;
+}
+.book .book-size {
+    padding: 0 5px;
+    color: var(--muted);
 }
 
 /* A single cover set inside an entry */
@@ -594,9 +669,11 @@ p#credits {
 
 @media(max-width: 535px) {
     .books {
-        grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
-        gap: 26px 18px;
+        --cover-h: 210px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        row-gap: 44px;
     }
+    .book .book-cover { padding: 0 12px; }
     .entry-figure {
         float: none;
         display: block;
@@ -708,14 +785,14 @@ p#credits {
 #spiral-archive-caption .continue {
     margin-bottom: 0;
 }
+/* white on the black section: the drawn dotted underline (end of file) in
+   white, and its descender halo cut in black rather than paper */
 #spiral-archive-caption a {
     color: #fff;
-    text-decoration: underline dotted;
-    text-decoration-thickness: 0.05rem;
-    text-underline-offset: 4px;
-}
-#spiral-archive-caption a:hover {
-    text-decoration-style: solid;
+    text-shadow:
+        1px 0 #000, -1px 0 #000,
+        2px 0 #000, -2px 0 #000,
+        3px 0 #000, -3px 0 #000;
 }
 
 /* the card that follows the cursor */
@@ -865,7 +942,7 @@ p#credits {
     height: 100%;
     fill: #fff;
 }
-/* "Show / Hide quotes" is marked with the watercolour spiral, which needs a
+/* "Pause / Play quotes" is marked with the watercolour spiral, which needs a
    square; it turns a half-turn each time the quotes are toggled */
 .quotes-toggle .icon {
     width: 16px;
@@ -882,9 +959,10 @@ p#credits {
 .quotes-toggle[aria-pressed="true"] .icon img {
     transform: rotate(180deg);
 }
-/* quotes are held back while the spiral replays its growth, so the toggle
-   steps aside until it's done */
-#spiral-archive.growing .quotes-toggle {
+/* quotes are held back while the spiral replays its growth or shows only
+   one kind of piece, so the toggle steps aside until it's done */
+#spiral-archive.growing .quotes-toggle,
+#spiral-archive.filtering .quotes-toggle {
     display: none;
 }
 .grow-toggle:hover .lbl {
@@ -948,6 +1026,14 @@ p#credits {
     }
     .grow-date {
         font-size: 13px;
+    }
+    /* the dropdown stops floating over the spiral and takes its own line
+       above it (the measured left the script sets only applies when it
+       floats); scoped by id so it outranks the base rule further down */
+    #spiral-archive .kind-filter {
+        position: static;
+        display: block;
+        margin: 0 0 18px 0;
     }
 }
 
@@ -1045,6 +1131,49 @@ p#credits {
 #archive.quote-focus #spiral-archive.years-on .spiral-mark,
 #archive.quote-focus .snail.on {
     opacity: 0.3;
+}
+
+/* One kind of piece at a time: the rest step right back, further than for
+   a quote (and this outranks the quote's dimming, so they stay back) */
+#archive #spiral-archive.filtering svg rect[data-i].filtered-out {
+    opacity: 0.08;
+}
+
+/* the dropdown that picks the kind, up and to the left of the spiral,
+   mirroring the controls on the right */
+.kind-filter {
+    position: absolute;
+    top: 4%;
+    left: 9%;
+    z-index: 4;
+}
+.kind-filter select {
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #fff;
+    background-color: #000;
+    /* a small drawn caret, in white */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0.5 0.5L5 5L9.5 0.5' fill='none' stroke='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 9px center;
+    background-size: 10px 6px;
+    border: 1px dotted #fff;
+    border-radius: 0;
+    padding: 5px 30px 5px 9px;
+    cursor: pointer;
+}
+/* the border stays dotted in every state, with no focus ring round it
+   (browsers count a click on a select as keyboard-style focus) */
+.kind-filter select:focus,
+.kind-filter select:focus-visible {
+    outline: none;
+}
+.kind-filter option {
+    color: #fff;
+    background: #000;
 }
 
 
@@ -1217,8 +1346,7 @@ details[open] > .stat-row .label {
     flex: 0 1 auto;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 26px;
-    text-decoration: underline;
-    text-underline-offset: 5px;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -1263,13 +1391,16 @@ details[open] > .stat-row .label {
 
 #word-viewer {
     position: relative;
+    /* a little less room before the index than between other sections */
+    margin-bottom: 50px;
 }
 #wordbox {
     margin: 0.5em 0 0.5em 0;
 }
 .wordbox-head {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    /* full bleed, but capped at 1725px and centred */
+    width: min(100vw, 1725px);
+    margin-left: calc(50% - min(50vw, 862.5px));
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -1294,6 +1425,8 @@ details[open] > .stat-row .label {
     overflow-y: hidden;
     padding: 8px 40px 12px 0;
     margin-bottom: 4px;
+    /* a dashed rule under the run of words */
+    border-bottom: 1px dashed var(--ink);
     scrollbar-width: thin;
     -webkit-mask-image: linear-gradient(to right, #000, #000 calc(100% - 40px), transparent);
     mask-image: linear-gradient(to right, #000, #000 calc(100% - 40px), transparent);
@@ -1408,8 +1541,9 @@ details[open] > .stat-row .label {
 .wordbox-quotes {
     margin-top: 1.6em;
     display: grid;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+    /* full bleed, but capped at 1725px and centred */
+    width: min(100vw, 1725px);
+    margin-left: calc(50% - min(50vw, 862.5px));
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     grid-auto-rows: 8px;
     column-gap: 26px;
@@ -1425,6 +1559,43 @@ details[open] > .stat-row .label {
     max-width: none;
     margin: 0;
     break-inside: avoid;
+}
+/* One line from an interviewee's "recommends" list that uses the word:
+   plain type in a dashed box, set apart from the coloured quotes */
+.wordbox-quotes .rec-card {
+    width: 100%;
+    margin: 0;
+    padding: 12px 14px;
+    border: 1px dashed var(--ink);
+    font-family: Courier, "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.5em;
+    break-inside: avoid;
+}
+.wordbox-quotes .rec-card .rec-label {
+    display: block;
+    margin-bottom: 0.6em;
+    color: var(--muted);
+}
+.wordbox-quotes .rec-card .rec-label a {
+    color: var(--ink);
+    text-decoration: underline dotted;
+    text-decoration-thickness: 0.05rem;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 4px;
+}
+.wordbox-quotes .rec-card .rec-label a:hover {
+    text-decoration-style: solid;
+}
+.wordbox-quotes .rec-card p {
+    margin: 0;
+    max-width: none;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+@media(max-width: 620px) {
+    .wordbox-quotes .rec-card p { overflow-wrap: anywhere; }
 }
 .wordbox-quotes .pulled-photo {
     /* shrink to the image so the caption sits under it at the same width,
@@ -1510,9 +1681,7 @@ details[open] > .stat-row .label {
     color: var(--ink);
 }
 .word-row .label:hover {
-    color: #0000EE;
-    text-decoration: underline;
-    text-underline-offset: 5px;
+    color: var(--ink);
 }
 
 @media(max-width: 535px) {
@@ -1573,7 +1742,7 @@ details[open] > .stat-row .label {
    every image fades up to whatever opacity it was already given. */
 .scatter .im {
     /* backwards, not both: once an image has arrived the animation lets go
-       of its opacity, so the colour bloom below can transition it */
+       of its opacity, so the fade-out below can transition it */
     animation: im-in var(--fade-dur, 4s) ease-out backwards;
     animation-delay: var(--fade-delay, 0s);
 }
@@ -1590,35 +1759,14 @@ details[open] > .stat-row .label {
     filter: grayscale(1) contrast(0.85);
     opacity: 0.16;
     mix-blend-mode: multiply;
-    /* the slow fade back to gray, like the title's letters */
-    transition: filter 5s ease, opacity 5s ease;
-}
-/* now and then one image blooms into colour */
-.scatter .im.lit {
-    filter: grayscale(0) contrast(0.95);
-    opacity: 0.38;
-    transition: filter 3s ease, opacity 3s ease;
 }
 
-/* fossils, top of the page */
+/* top of the page: three or four photos at a time, swapped by script.js */
 .header-scatter { overflow: visible; }
-.scatter .im-fossil-a {
-    width: 210px;
-    top: -26px;
-    right: 4%;
-}
-.scatter .im-fossil-b {
-    width: 320px;
-    top: 74px;
-    right: 22%;
-    opacity: 0.12;
-}
-
-.scatter .im-header-c {
-    width: 250px;
-    top: 20px;
-    left: 6%;
-    opacity: 0.13;
+/* on its way out */
+.scatter .im.out {
+    opacity: 0;
+    transition: opacity 3s ease, filter 3s ease;
 }
 
 /* sand and beach, around TCI Turns 10 */
@@ -1642,16 +1790,12 @@ details[open] > .stat-row .label {
 /* scoped with .scatter so these outrank the desktop sizes above — without it
    they silently lost and phones got the full-size images */
 @media(max-width: 900px) {
-    .scatter .im-fossil-b, .scatter .im-sand-b { display: none; }
-    .scatter .im-fossil-a { width: 130px; right: 0; }
-    .scatter .im-header-c { width: 170px; }
+    .scatter .im-sand-b { display: none; }
     .scatter .im-sand-a { width: 190px; left: -30px; }
     .scatter .im-beach { width: 130px; right: -18px; }
 }
 /* phones: a little smaller again */
 @media(max-width: 535px) {
-    .scatter .im-fossil-a { width: 100px; }
-    .scatter .im-header-c { width: 125px; }
     .scatter .im-sand-a { width: 140px; left: -24px; }
     .scatter .im-beach { width: 100px; right: -14px; }
 }
@@ -1678,6 +1822,10 @@ details[open] > .stat-row .label {
 #archive .spiral-card {
     border: 1px dotted #000;
 }
+#word-viewer .spiral-card.on-black,
+#archive .spiral-card.on-black {
+    border-color: #fff;
+}
 
 /* reshuffle the set */
 /* the spiral sits in the same square as the arrows and redraws the set */
@@ -1693,8 +1841,7 @@ details[open] > .stat-row .label {
 
 /* Attribution for the borrowed imagery */
 p#image-credits {
-    font-size: 11px;
-    font-style: italic;
+    font-size: 14px;
     margin-top: 10px;
     line-height: 1.5em;
 }
@@ -1720,23 +1867,25 @@ nav#jump {
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
-    gap: 5px;
+    gap: 9px;
     font-family: Courier, "Courier New", monospace;
     font-size: 16px;
     line-height: 1.4em;
 }
 nav#jump a {
     color: var(--ink);
-    text-decoration: none;
-    /* the gray highlighter */
-    background-color: #EEEEEE;
-    border: 1px dotted #fff;
-    /* flex items are blocks, so the gray fills the line box:
-       a tight line-height is what trims it top and bottom */
+    /* the same underline as thecreativeindependent.com's links and tags */
+    text-decoration: underline dotted;
+    text-decoration-thickness: 0.05rem;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 4px;
     line-height: 1.1em;
-    padding: 2px 3px;
+    padding: 0;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+}
+nav#jump a:hover {
+    text-decoration-style: solid;
 }
 
 /* phones skip the jump links; the page is a single scroll there */
@@ -1744,4 +1893,54 @@ nav#jump a {
     nav#jump {
         display: none;
     }
+}
+
+
+/* the ends of each shelf run out to the browser's edges (html clips the
+   overhang, so nothing scrolls sideways) */
+.book.row-start .book-cover::after { left: -100vw; }
+.book.row-end .book-cover::after { right: -100vw; }
+
+/* snails crawling along the shelves, in front of the books */
+.shelf-crawler {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    height: auto;
+    max-width: none;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* ---------------------------------------------------------------
+   The dotted underline, for links in running text and the index words.
+   Browsers will not break a dotted text-decoration round descenders, so
+   the line is drawn as a background instead, and a halo of paper-coloured
+   text-shadow cuts it away either side of each letter's tail. Solid, and
+   just as thin, on hover. Last in the file so the buttons' own
+   `background: transparent` cannot clear it.
+   --------------------------------------------------------------- */
+p a,
+.word-row .label {
+    text-decoration: none;
+    background-image: linear-gradient(to right, currentColor 50%, transparent 50%);
+    background-size: 3px 1px;
+    background-repeat: repeat-x;
+    background-position: 0 calc(100% - 0.06em);
+    text-shadow:
+        1px 0 var(--paper), -1px 0 var(--paper),
+        2px 0 var(--paper), -2px 0 var(--paper),
+        3px 0 var(--paper), -3px 0 var(--paper);
+}
+p a:hover,
+.word-row .label:hover {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+}
+
+/* the index words sit a little higher over their line than the running
+   text does, but not so low that the line misses the tails of g and y */
+.word-row .label {
+    background-position: 0 calc(100% - 1px);
 }

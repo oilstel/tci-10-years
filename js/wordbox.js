@@ -16,6 +16,7 @@
 
     const PER_SET = 7;          // quotes shown at a time
     const MAX_IMAGES = 3;       // images shown at a time
+    const MAX_RECS = 2;         // recommendations shown at a time
     const ROW = 8, VGAP = 54;   // masonry units
 
     let words = {}, order = [], at = 0, spiral = null, strip = null;
@@ -49,6 +50,44 @@
     }
     window.addEventListener('resize', layout);
 
+    // ---- text from the interviews' markdown ----------------------------
+    // Quotes and captions arrive as the interviews wrote them: backslash
+    // escapes (Y2K\+15), kramdown attributes ({:target="blank"}), <i> tags.
+    // Tidy what reads as code and keep <i>/<em>/*…* as real italics — built
+    // with text nodes, never innerHTML.
+    const decoder = document.createElement('textarea');
+    const decode = (s) => { decoder.innerHTML = s; return decoder.value; };
+    function tidy(s) {
+        return String(s)
+            .replace(/\{:[^}]*\}/g, '')
+            .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')      // [text](url) -> text
+            .replace(/\*\*([^*]+)\*\*/g, '$1')            // **bold** -> text
+            .replace(/(^|[\s(“"])_([^_\n]+)_(?=[\s).,;:!?”"]|$)/g, '$1*$2*')   // _italic_ -> *italic*
+            .replace(/\\(?=\s|$)/g, '')                   // a stray trailing backslash
+            .replace(/\\([\\`*_{}\[\]()#+\-.!|])/g, '$1')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+    function richText(el, s) {
+        let italic = false;
+        tidy(s).split(/(<\/?(?:i|em)\s*>|\*[^*\s][^*]*\*)/i).forEach(part => {
+            if (!part) return;
+            if (/^<(i|em)\s*>$/i.test(part)) { italic = true; return; }
+            if (/^<\/(i|em)\s*>$/i.test(part)) { italic = false; return; }
+            let text = part, it = italic;
+            if (/^\*[^*\s][^*]*\*$/.test(part)) { text = part.slice(1, -1); it = true; }
+            text = decode(text.replace(/<[^>]*>/g, ''));   // any other tag is dropped
+            if (!text) return;
+            if (it) {
+                const i = document.createElement('i');
+                i.textContent = text;
+                el.appendChild(i);
+            } else {
+                el.appendChild(document.createTextNode(text));
+            }
+        });
+    }
+
     // ---- pieces of the set ---------------------------------------------
     function quoteCard(text, rec) {
         const [slug, title, , pi] = rec;
@@ -61,7 +100,7 @@
         el.style.setProperty('--hlc', fg);
 
         const p = document.createElement('p');
-        p.textContent = text;
+        richText(p, text);
 
         const attrib = document.createElement('span');
         attrib.className = 'attrib';
@@ -85,6 +124,27 @@
         return el;
     }
 
+    // One line from an interviewee's "recommends" list that uses the word
+    function recCard([text, i]) {
+        const rec = spiral && spiral.d[i];
+        if (!rec) return null;
+        const el = document.createElement('div');
+        el.className = 'rec-card';
+
+        const label = document.createElement('span');
+        label.className = 'rec-label';
+        const a = document.createElement('a');
+        a.className = 'link-to-article';
+        a.href = 'https://thecreativeindependent.com/people/' + rec[0] + '/';
+        a.textContent = rec[1].split(/\s+on\s+/)[0];
+        label.append(a, ' recommends');
+
+        const p = document.createElement('p');
+        richText(p, text);
+        el.append(label, p);
+        return el;
+    }
+
     function figure(src, cap, rec, wide) {
         const fig = document.createElement('figure');
         fig.className = 'pulled-photo' + (wide ? ' wide' : '');
@@ -102,7 +162,7 @@
         fig.appendChild(link);
         if (cap) {
             const c = document.createElement('figcaption');
-            c.textContent = cap;
+            richText(c, cap);
             fig.appendChild(c);
         }
         return fig;
@@ -126,6 +186,12 @@
         const sample = shuffle((data.idx || []).slice()).slice(0, want);
         const dropAt = Math.floor(picked.length / 2);
 
+        // a couple of the interviewees' own recommendations that use the
+        // word, spaced out among the quotes
+        const recs = shuffle((data.r || []).slice()).slice(0, MAX_RECS);
+        const recSlots = recs.map((_, k) => Math.floor((k + 1) * picked.length / (recs.length + 1)));
+        let nextRec = 0;
+
         let images = 0;
         picked.forEach((q, n) => {
             const rec = spiral.d[q[1]];
@@ -134,6 +200,10 @@
             if (q[2] && images < MAX_IMAGES) {
                 quotesEl.appendChild(figure(q[2], q[3] || '', rec, images === 0));
                 images++;
+            }
+            while (nextRec < recs.length && recSlots[nextRec] === n) {
+                const card = recCard(recs[nextRec++]);
+                if (card) quotesEl.appendChild(card);
             }
             if (spiral && n === dropAt && sample.length) {
                 quotesEl.appendChild(pieceCluster(sample));
@@ -256,6 +326,8 @@
             const pal = spiral.p[rec[3]];
             hoverCard.style.setProperty('--card-bg', pal[0]);
             hoverCard.style.setProperty('--card-fg', pal[1]);
+            // the dotted black edge vanishes on a black card, so it goes white
+            hoverCard.classList.toggle('on-black', pal[0].toUpperCase() === '#000000');
             clearTimeout(imgTimer);
             const token = ++imgToken;
             cImg.style.backgroundImage = '';

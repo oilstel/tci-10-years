@@ -9,6 +9,12 @@ const GRID_W = 32, GRID_H = 29;
 
 // Interviews carry no kind; everything else lives at its own address.
 const PIECE_PATHS = { note: 'notes', weekend: 'weekends', essay: 'essays', guide: 'guides', zine: 'library' };
+// some kinds of piece keep one colour of their own instead of their palette's
+const KIND_COLORS = { weekend: '#1B0699', zine: '#EDDA46', guide: '#E6C66E' };
+// and their hover cards match: [background, text]
+const KIND_CARDS = { zine: ['#EDDA46', '#000000'] };
+// shown on the hover card when a piece has no portrait: TCI's green snail
+const SPIRAL_FALLBACK = 'https://s3.amazonaws.com/tci-assets/uploads/test-snail-green.jpg';
 const pieceHref = (rec) => 'https://thecreativeindependent.com/' +
     (PIECE_PATHS[rec[6]] || 'people') + '/' + rec[0] + '/';
 
@@ -83,7 +89,7 @@ function fitCells(base, need) {
             const title = rec[1];
             // [2] is the block colour: the palette's vivid side, so a
             // paper-white background never reads as a blank block
-            const bg = palettes[rec[3]][2] || palettes[rec[3]][0];
+            const bg = KIND_COLORS[rec[6]] || palettes[rec[3]][2] || palettes[rec[3]][0];
             const a = document.createElementNS(NS, 'a');
             const href = pieceHref(rec);
             a.setAttribute('href', href);
@@ -236,15 +242,22 @@ function fitCells(base, need) {
             cVoc.textContent = r[5] || '';
             cDate.textContent = new Date(r[2] + 'T00:00:00').toLocaleDateString('en-US',
                 { year: 'numeric', month: 'long', day: 'numeric' });
-            const pal = palettes[r[3]];
-            card.style.setProperty('--card-bg', pal[0]);
-            card.style.setProperty('--card-fg', pal[1]);
+            const [cardBg, cardFg] = KIND_CARDS[r[6]] || palettes[r[3]];
+            card.style.setProperty('--card-bg', cardBg);
+            card.style.setProperty('--card-fg', cardFg);
+            // the dotted black edge vanishes on a black card, so it goes white
+            card.classList.toggle('on-black', cardBg.toUpperCase() === '#000000');
             // A div, not an <img> — an image element with no source paints a
             // broken-image glyph. The square shows the interview's text colour
             // until the portrait has decoded, and never fails visibly.
             clearTimeout(imgTimer);
             const token = ++imgToken;
             cImg.style.backgroundImage = '';
+            // no portrait, or one that will not load: the green snail
+            const fallback = () => {
+                if (token !== imgToken) return;
+                cImg.style.backgroundImage = `url("${SPIRAL_FALLBACK}")`;
+            };
             if (r[4]) {
                 imgTimer = setTimeout(() => {
                     const pre = new Image();
@@ -252,9 +265,11 @@ function fitCells(base, need) {
                         if (token !== imgToken) return;   // a later hover won
                         cImg.style.backgroundImage = `url("${r[4]}")`;
                     };
-                    pre.onerror = () => {};               // keep the plain square
+                    pre.onerror = fallback;
                     pre.src = r[4];
                 }, 40);
+            } else {
+                fallback();
             }
         }
         card.classList.add('on');
@@ -335,6 +350,48 @@ function fitCells(base, need) {
     controls.className = 'spiral-controls';
     controls.append(grow, btn);
     mount.appendChild(controls);
+
+    // ---- show one kind of piece -------------------------------------
+    // A dropdown up and to the left of the spiral: pick a kind and every
+    // other block steps right back.
+    const KINDS = [['interview', 'Interviews'], ['guide', 'Guides'], ['essay', 'Essays'],
+        ['weekend', 'Weekends'], ['note', 'Notes'], ['zine', 'Zines']];
+    const kindOf = i => rows[i][6] || 'interview';
+    const counts = {};
+    rects.forEach(r => {
+        const k = kindOf(+r.dataset.i);
+        r.dataset.kind = k;
+        counts[k] = (counts[k] || 0) + 1;
+    });
+
+    const filter = document.createElement('label');
+    filter.className = 'kind-filter';
+    const select = document.createElement('select');
+    select.innerHTML = `<option value="">Everything (${rects.length.toLocaleString('en-US')})</option>` +
+        KINDS.filter(([k]) => counts[k])
+            .map(([k, name]) => `<option value="${k}">${name} (${counts[k].toLocaleString('en-US')})</option>`)
+            .join('');
+    select.setAttribute('aria-label', 'Show one kind of piece');
+    select.addEventListener('change', () => {
+        const kind = select.value;
+        mount.classList.toggle('filtering', !!kind);
+        rects.forEach(r => r.classList.toggle('filtered-out', !!kind && r.dataset.kind !== kind));
+    });
+    filter.append(select);
+    // first in the box: on desktop it floats in the corner either way, and
+    // on phones, where it stops floating, this puts it above the spiral
+    mount.insertBefore(filter, mount.firstChild);
+
+    // line the dropdown up with the start of the section's heading, which is
+    // centred at a different width from the spiral, so it is measured
+    const heading = mount.parentElement && mount.parentElement.querySelector('h2');
+    function alignFilter() {
+        if (!heading) return;
+        const left = heading.getBoundingClientRect().left - mount.getBoundingClientRect().left;
+        filter.style.left = Math.round(left) + 'px';
+    }
+    alignFilter();
+    window.addEventListener('resize', alignFilter);
 
     let raf = 0, run = 0;
     function finish() {
