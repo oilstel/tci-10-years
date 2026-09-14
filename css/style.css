@@ -615,7 +615,8 @@ p#credits {
 }
 .book img {
     width: 100%;
-    max-height: calc(var(--cover-h) - 12px);
+    margin-bottom: 14px;              /* floats a little above the plank */
+    max-height: calc(var(--cover-h) - 26px);
     object-fit: contain;
     object-position: bottom;
     filter: invert(1);
