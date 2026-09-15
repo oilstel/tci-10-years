@@ -212,7 +212,11 @@ const SNAIL_VIDEOS = [
         items.forEach((el, i) => {
             el.classList.toggle('row-start', i % cols === 0);
             el.classList.toggle('row-end', i % cols === cols - 1 || i === items.length - 1);
+            el.style.removeProperty('--empty');
         });
+        // the last shelf's plank runs on past its final book to the shelf's end
+        const empty = (cols - items.length % cols) % cols;
+        if (empty && items.length) items[items.length - 1].style.setProperty('--empty', empty);
         return true;
     }
     mark();
