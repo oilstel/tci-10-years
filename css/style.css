@@ -599,7 +599,7 @@ p#credits {
     align-items: flex-end;
     justify-content: center;
     padding: 0 18px;
-    margin-bottom: 34px;
+    margin-bottom: 44px;
 }
 /* the plank: a dotted top edge and a dotted lower edge */
 .book .book-cover::after {
@@ -608,7 +608,7 @@ p#credits {
     left: 0;
     right: 0;
     top: 100%;
-    height: 14px;
+    height: 24px;
     border-top: 1px dotted var(--ink);
     border-bottom: 1px dotted var(--ink);
     opacity: 0.7;
@@ -628,26 +628,27 @@ p#credits {
     margin-left: 13px;
     margin-right: 13px;
 }
+/* the title's lines sit close enough that the highlight runs unbroken from
+   one line to the next */
 .book .book-title {
     align-self: flex-start;
+    line-height: 1.2em;
+    margin-bottom: 0.15em;
 }
 .book .book-title .hl {
     background-color: var(--wash);
-    padding: 2px 5px;
+    padding: 1px 2px;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
-.book .book-link:hover .book-title {
-    text-decoration: underline;
-}
-/* title, author, link and size all sit on the same 1.5em line spacing */
+/* author, link and size sit on 1.5em line spacing, lined up with the title */
 .book .book-author {
     color: var(--muted);
-    padding: 0 5px;
+    padding: 0 2px;
 }
 .book .book-pdf {
     align-self: flex-start;
-    padding: 0 5px;
+    padding: 0 2px;
     color: var(--ink);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -656,7 +657,7 @@ p#credits {
     text-decoration-style: dotted;
 }
 .book .book-size {
-    padding: 0 5px;
+    padding: 0 2px;
     color: var(--muted);
 }
 

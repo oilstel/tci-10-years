@@ -42,11 +42,39 @@
             const w = im.getBoundingClientRect().width;
             if (w) fig.style.width = Math.round(w) + 'px';
         });
+        spans();
+        // An image that can't find room beside the rest drops below everything
+        // and sits there alone. Let a two-column image take one column, and if
+        // it still hangs off the bottom, leave it out of this set.
+        for (let tries = 0; tries < 3 && unhang(); tries++) spans();
+    }
+    function spans() {
         [...quotesEl.children].forEach(el => { el.style.gridRowEnd = 'auto'; });
         [...quotesEl.children].forEach(el => {
             const h = el.getBoundingClientRect().height;
             if (h) el.style.gridRowEnd = 'span ' + Math.max(1, Math.ceil((h + VGAP) / ROW));
         });
+    }
+    function unhang() {
+        // one column (phones) stacks everything anyway
+        if (getComputedStyle(quotesEl).gridTemplateColumns.split(' ').length < 2) return false;
+        const kids = [...quotesEl.children].filter(el => el.style.display !== 'none');
+        if (kids.length < 2) return false;
+        const rects = kids.map(el => el.getBoundingClientRect());
+        let low = 0;
+        rects.forEach((r, i) => { if (r.bottom > rects[low].bottom) low = i; });
+        const fig = kids[low];
+        const im = fig.classList.contains('pulled-photo') && fig.querySelector('img');
+        if (!im || !im.naturalWidth) return false;
+        const rest = Math.max(...rects.filter((_, i) => i !== low).map(r => r.bottom));
+        const r = rects[low];
+        if (r.bottom - rest <= r.height / 2) return false;
+        if (fig.classList.contains('wide')) {
+            fig.classList.remove('wide');
+        } else {
+            fig.style.display = 'none';
+        }
+        return true;
     }
     window.addEventListener('resize', layout);
 
